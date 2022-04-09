@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Cart</string>
+    <string name="card">Card</string>
+    <string name="search_hint">search</string>
+    <string name="dong">đ</string>
+    <string name="product_description">Product Description</string>
+    <string name="sample_cost">99999</string>
+    <string name="todo">TODO</string>
+    <string name="my_cart">My Cart</string>
+    <string name="quantity">Quantity</string>
+    <string name="sum_price">Sum price</string>
+    <string name="total">Total</string>
+    <string name="imgviewiconcard">imgViewIconCard</string>
+    <string name="imgbuttoncheckout">imgButtonCheckout</string>
+    <string name="dummyid">dummyid</string>
+    <string name="imageButtonAddToCard">ImageButtonAddToCard</string>
+</resources>
