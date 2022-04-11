@@ -1,5 +1,6 @@
 package hanu.a2_1901040037.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,14 +67,13 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
 
             setSumPrice(product);
 
-            int totalPrice = productManager.all().stream().mapToInt(p -> (p.getQuantity() * p.getUnitPrice())).sum();
-
-            txtViewTotalPrice.setText(String.valueOf(totalPrice));
+            setTotalPrice();
 
             imgButtonPlus.setOnClickListener(view -> {
                 productManager.addQuantity(product);
 
                 updateItems();
+                setTotalPrice();
                 setSumPrice(product);
             });
 
@@ -81,6 +81,7 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
                 productManager.minusQuantity(product);
 
                 updateItems();
+                setTotalPrice();
                 setSumPrice(product);
             });
 
@@ -94,17 +95,25 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
             txtViewUnitPrice.setText(String.valueOf(product.getUnitPrice()));
             txtViewQuantity.setText(String.valueOf(product.getQuantity()));
         }
+
         private void setSumPrice(Product product){
             txtViewSumPrice_cart.setText(String.valueOf(product.getUnitPrice() * product.getQuantity()));
         }
 
+        private void setTotalPrice(){
+            int totalPrice = productManager.all().stream().mapToInt(p -> (p.getQuantity() * p.getUnitPrice())).sum();
+            txtViewTotalPrice.setText(String.valueOf(totalPrice));
+        }
+
         private void updateItems() {
+            Log.d("BEFORE", String.valueOf(productList));
             productList.clear();
             productManager.all().forEach(x -> {
                 if (x.getQuantity() > 0) {
                     productList.add(x);
                 }
             });
+            Log.d("AFTER", String.valueOf(productList));
             notifyDataSetChanged();
         }
     }
