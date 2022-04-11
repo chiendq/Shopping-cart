@@ -65,24 +65,24 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
         public void binding(Product product) {
             setProductHolderInf(product);
 
-            setSumPrice(product);
+            updateSumPriceText(product);
 
-            setTotalPrice();
+            updateTotalPriceText();
 
             imgButtonPlus.setOnClickListener(view -> {
                 productManager.addQuantity(product);
 
-                updateItems();
-                setTotalPrice();
-                setSumPrice(product);
+                updateProductList();
+                updateTotalPriceText();
+                updateSumPriceText(product);
             });
 
             imgButtonMinus.setOnClickListener(view -> {
                 productManager.minusQuantity(product);
 
-                updateItems();
-                setTotalPrice();
-                setSumPrice(product);
+                updateProductList();
+                updateTotalPriceText();
+                updateSumPriceText(product);
             });
 
             imgViewThumbnail.setOnClickListener(view -> {});
@@ -96,24 +96,22 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
             txtViewQuantity.setText(String.valueOf(product.getQuantity()));
         }
 
-        private void setSumPrice(Product product){
+        private void updateSumPriceText(Product product){
             txtViewSumPrice_cart.setText(String.valueOf(product.getUnitPrice() * product.getQuantity()));
         }
 
-        private void setTotalPrice(){
+        private void updateTotalPriceText(){
             int totalPrice = productManager.all().stream().mapToInt(p -> (p.getQuantity() * p.getUnitPrice())).sum();
             txtViewTotalPrice.setText(String.valueOf(totalPrice));
         }
 
-        private void updateItems() {
-            Log.d("BEFORE", String.valueOf(productList));
+        private void updateProductList() {
             productList.clear();
             productManager.all().forEach(x -> {
                 if (x.getQuantity() > 0) {
                     productList.add(x);
                 }
             });
-            Log.d("AFTER", String.valueOf(productList));
             notifyDataSetChanged();
         }
     }
