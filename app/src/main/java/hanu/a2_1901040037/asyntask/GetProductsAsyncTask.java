@@ -198,6 +198,7 @@ public class GetProductsAsyncTask extends AsyncTask<Void, Integer, Void> {
             // if no item is added in filtered list we are
             // displaying a toast message as no data found.
             Toast.makeText(contextParent, "No product found", Toast.LENGTH_SHORT).show();
+            productAdapter.filterList(filteredList);
         } else {
             // at last we are passing that filtered
             // list to our adapter class.

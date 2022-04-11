@@ -3,100 +3,117 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/item_cart_background">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgViewThumbnail"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_cart_item_background"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/txtViewProductName_cart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
-        android:lines="2"
-        android:text="TextView"
-        app:layout_constraintLeft_toRightOf="@id/imgViewThumbnail"
-        app:layout_constraintRight_toLeftOf="@id/imgButtonPlus"
-        app:layout_constraintTop_toTopOf="@+id/imgViewThumbnail" />
-
-    <TextView
-        android:id="@+id/txtViewDong_cart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/dong"
-        android:textStyle="bold"
-        android:textColor="@color/priceAndDong"
-        app:layout_constraintStart_toStartOf="@+id/txtViewProductName_cart"
-        app:layout_constraintTop_toBottomOf="@id/txtViewProductName_cart" />
-
-    <TextView
-        android:id="@+id/txtViewUnitPrice"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:textStyle="bold"
-        android:textColor="@color/priceAndDong"
-        android:text="@string/sample_cost"
-        app:layout_constraintLeft_toRightOf="@+id/txtViewDong_cart"
-        app:layout_constraintRight_toLeftOf="@id/imgButtonMinus"
-        app:layout_constraintTop_toTopOf="@id/txtViewDong_cart" />
-
-    <ImageButton
-        android:id="@+id/imgButtonPlus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/txtViewQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="@color/priceAndDong"
-        android:text="1"
-        app:layout_constraintBottom_toTopOf="@id/imgButtonMinus"
-        app:layout_constraintLeft_toLeftOf="@id/imgButtonMinus"
-        app:layout_constraintRight_toRightOf="@id/imgButtonMinus"
-        app:layout_constraintTop_toBottomOf="@id/imgButtonPlus" />
+        <ImageView
+            android:id="@+id/imgViewThumbnail"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageButton
-        android:id="@+id/imgButtonMinus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="1dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgButtonPlus"
-        app:layout_constraintStart_toStartOf="@+id/imgButtonPlus"
-        app:srcCompat="@drawable/ic_baseline_remove_24"
-        tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/txtViewProductName_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:lines="2"
+            android:textSize="20sp"
+            android:text="@string/sample_product_name"
+            app:layout_constraintLeft_toRightOf="@id/imgViewThumbnail"
+            app:layout_constraintRight_toLeftOf="@id/imgButtonPlus"
+            app:layout_constraintTop_toTopOf="@+id/imgViewThumbnail" />
 
-    <TextView
-        android:id="@+id/txtViewSumPrice_cart"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:textStyle="bold"
-        android:textColor="@color/priceAndDong"
-        android:text="99999999"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/imgButtonMinus"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtViewDong_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+
+            android:text="@string/dong"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtViewProductName_cart"
+            app:layout_constraintTop_toBottomOf="@id/txtViewProductName_cart" />
+
+        <TextView
+            android:id="@+id/txtViewUnitPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="20sp"
+
+            android:text="@string/sample_cost"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/txtViewDong_cart"
+            app:layout_constraintRight_toLeftOf="@id/imgButtonMinus"
+            app:layout_constraintTop_toTopOf="@id/txtViewDong_cart" />
+
+        <ImageButton
+            android:id="@+id/imgButtonPlus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.775"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txtViewQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/sample_quantity"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imgButtonMinus"
+            app:layout_constraintLeft_toLeftOf="@id/imgButtonMinus"
+            app:layout_constraintRight_toRightOf="@id/imgButtonMinus"
+            app:layout_constraintTop_toBottomOf="@id/imgButtonPlus" />
+
+        <ImageButton
+            android:id="@+id/imgButtonMinus"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgButtonPlus"
+            app:layout_constraintStart_toStartOf="@+id/imgButtonPlus"
+            app:srcCompat="@drawable/ic_baseline_remove_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txtViewSumPrice_cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/sample_sum_price"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/imgButtonMinus"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,8 +10,13 @@
     <string name="quantity">Quantity</string>
     <string name="sum_price">Sum price</string>
     <string name="total">Total</string>
-    <string name="imgviewiconcard">imgViewIconCard</string>
-    <string name="imgbuttoncheckout">imgButtonCheckout</string>
-    <string name="dummyid">dummyid</string>
+    <string name="imgViewIconCard">imgViewIconCard</string>
+    <string name="imgButtonCheckout">imgButtonCheckout</string>
+    <string name="dummyId">dummyid</string>
     <string name="imageButtonAddToCard">ImageButtonAddToCard</string>
+    <string name="check_out">Check out</string>
+    <string name="search">Search</string>
+    <string name="sample_quantity">1</string>
+    <string name="sample_product_name">Sample product name</string>
+    <string name="sample_sum_price">999999</string>
 </resources>
