@@ -25,7 +25,6 @@ public class MyCardAdapter extends RecyclerView.Adapter<MyCardAdapter.MyCardHold
 
     public MyCardAdapter(List<Product> productList) {
         this.productList = productList;
-
     }
 
     private ProductManager productManager;

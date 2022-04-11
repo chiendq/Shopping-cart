@@ -11,13 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:contentDescription="@string/imgviewiconcard"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_cart"
-        android:contentDescription="@string/imgviewiconcard" />
+        app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
 
     <TextView
         android:id="@+id/txtViewMyCard"
@@ -35,10 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:textStyle="bold"
         android:text="@string/quantity"
+        android:textStyle="bold"
         app:layout_constraintRight_toLeftOf="@id/txtViewSumPrice"
-        app:layout_constraintTop_toTopOf="@id/txtViewSumPrice"/>
+        app:layout_constraintTop_toTopOf="@id/txtViewSumPrice" />
 
     <TextView
         android:id="@+id/txtViewSumPrice"
@@ -46,10 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:textStyle="bold"
         android:text="@string/sum_price"
+        android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtViewMyCard"/>
+        app:layout_constraintTop_toBottomOf="@id/txtViewMyCard" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMyCart"
@@ -58,7 +58,7 @@
         app:layout_constraintBottom_toTopOf="@id/totalPrice"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtViewSumPrice"/>
+        app:layout_constraintTop_toBottomOf="@id/txtViewSumPrice" />
 
     <LinearLayout
         android:id="@+id/totalPrice"
@@ -78,9 +78,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textStyle="bold"
+            android:text="@string/total"
             android:textSize="30sp"
-            android:text="@string/total" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtViewDong"
@@ -88,15 +88,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/dong" />
+            android:text="@string/dong"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtViewTotalPrice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_weight="3"
-            android:text="0" />
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/priceAndDong"
+            android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/imgButtonCheckout"
@@ -104,7 +108,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
-            android:src="@drawable/ic_baseline_payment_24"
-            android:contentDescription="@string/imgbuttoncheckout" />
+            android:contentDescription="@string/imgbuttoncheckout"
+            android:src="@drawable/ic_baseline_payment_24" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

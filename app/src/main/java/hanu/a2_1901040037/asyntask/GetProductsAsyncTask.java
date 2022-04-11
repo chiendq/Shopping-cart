@@ -149,7 +149,7 @@ public class GetProductsAsyncTask extends AsyncTask<Void, Integer, Void> {
         RecyclerView recyclerViewFriends = contextParent.findViewById(R.id.recyclerViewProduct);
         // Create layout manager
         GridLayoutManager gridLayoutManager = new GridLayoutManager(contextParent, 2);
-
+        
         // set layout manager
         recyclerViewFriends.setLayoutManager(gridLayoutManager);
 

@@ -55,7 +55,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductH
                     return;
                 }
                 productManager.addQuantity(product);
-                Toast.makeText(view.getContext(), "Selected " + product.getName().substring(0, product.getName().length() / 3), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(), "Selected " + product.getName().substring(0, product.getName().length() / 3), Toast.LENGTH_SHORT).show();
             });
         }
     }
